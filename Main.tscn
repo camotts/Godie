@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://addons/godot-openvr/scenes/ovr_first_person.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Left_Hand.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Right_Hand.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Floor.tscn" type="PackedScene" id=5]
+
+[node name="Spatial" type="Spatial" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="OVRFirstPerson" parent="." index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62175, 0 )
+
+[node name="Left_Hand2" parent="OVRFirstPerson" index="4" instance=ExtResource( 3 )]
+
+controller_id = 1
+
+[node name="Right_Hand2" parent="OVRFirstPerson" index="5" instance=ExtResource( 4 )]
+
+controller_id = 2
+
+[node name="Floor" parent="." index="1" instance=ExtResource( 5 )]
+
+_sections_unfolded = [ "Transform" ]
+
+
